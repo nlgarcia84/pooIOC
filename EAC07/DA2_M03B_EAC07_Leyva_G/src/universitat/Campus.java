@@ -6,6 +6,8 @@
 
 package universitat;
 
+import java.util.Scanner;
+
 /**
  *
  * @author fgarin
@@ -34,9 +36,53 @@ public class Campus {
      * - Assignar als atributs els valors passats com a paràmetres.
      */
 
+    public Campus(String nomCampus, String ubicacio) {
+        this.nomCampus = nomCampus;
+        this.ubicacio = ubicacio;
+    }
+
     /**
      * TODO Heu d'implementar tots els mètodes accessors possibles.
      */
+    public String getNomCampus() {
+        return nomCampus;
+    }
+
+    public String getUbicacio() {
+        return ubicacio;
+    }
+
+    public AulaEstandard[] getAulesEstandard() {
+        return aulesEstandard;
+    }
+
+    public AulaInformatica[] getAulesInformatica() {
+        return aulesInformatica;
+    }
+
+    public Laboratori[] getLaboratoris() {
+        return laboratoris;
+    }
+
+    public void setNomCampus(String nomCampus) {
+        this.nomCampus = nomCampus;
+    }
+
+    public void setUbicacio(String ubicacio) {
+        this.ubicacio = ubicacio;
+    }
+
+    public void setAulesEstandard(AulaEstandard[] aulesEstandard) {
+        this.aulesEstandard = aulesEstandard;
+    }
+
+    public void setAulesInformatica(AulaInformatica[] aulesInformatica) {
+        this.aulesInformatica = aulesInformatica;
+    }
+
+    public void setLaboratoris(Laboratori[] laboratoris) {
+        this.laboratoris = laboratoris;
+    }
 
     /**
      * TODO
@@ -51,6 +97,14 @@ public class Campus {
      *
      * Retorn: Objecte Campus creat.
      */
+    public static Campus addCampus() {
+        String nomCampus, ubicacio;
+        System.out.println("Introdueixi el nom del campus");
+        nomCampus = DADES.nextLine();
+        System.out.println("Introdueixi la ubicació del campus");
+        ubicacio = DADES.nextLine();
+        return new Campus(nomCampus, ubicacio);
+    }
 
     /*
      * TODO
@@ -70,6 +124,16 @@ public class Campus {
      * Retorn: cap
      */
 
+    public void updateCampus() {
+        System.out.println("Nom del campus actual: " + getNomCampus());
+        System.out.println("Introdueixi el nom del nou campus");
+        nomCampus = DADES.nextLine();
+        setNomCampus(nomCampus);
+        System.out.println("Ubicació actual del campus: " + getUbicacio());
+        System.out.println("Introdueixi la nova ubicació del campus");
+        ubicacio = DADES.nextLine();
+        setUbicacio(ubicacio);
+    }
     /*
      * TODO
      *
@@ -84,6 +148,13 @@ public class Campus {
      * Retorn: cost de manteniment total del campus.
      */
 
+    public double costManteniment() {
+        AulaEstandard aulaStandard = new AulaEstandard(nomCampus, pAulesEstandard, pAulansInformatica);
+        Laboratori laboratori = new Laboratori(nomCampus, pLaboratoris, pAulesEstandard, pAulansInformatica);
+        double costMantenimentTotal = aulaStandard.costManteniment() + laboratori.costManteniment();
+        return costMantenimentTotal;
+    }
+
     /*
      * TODO
      *
@@ -96,6 +167,11 @@ public class Campus {
      *
      * Retorn: cap
      */
+    public void showCampus() {
+        System.out.println("Nom del campus: " + getNomCampus());
+        System.out.println("Ubicació: " + getUbicacio());
+        System.out.println("Cost total de manteniment: " + costManteniment());
+    }
 
     /**
      * AulaEstandard
@@ -118,6 +194,11 @@ public class Campus {
      *
      * Retorn: cap
      */
+
+    public void addAulaEstandard() {
+        aulesEstandard[pAulesEstandard] = AulaEstandard.addAulaEstandard();
+        pAulesEstandard++;
+    }
 
     /**
      *
