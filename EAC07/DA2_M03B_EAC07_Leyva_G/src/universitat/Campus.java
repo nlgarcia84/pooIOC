@@ -52,36 +52,12 @@ public class Campus {
         return ubicacio;
     }
 
-    public AulaEstandard[] getAulesEstandard() {
-        return aulesEstandard;
-    }
-
-    public AulaInformatica[] getAulesInformatica() {
-        return aulesInformatica;
-    }
-
-    public Laboratori[] getLaboratoris() {
-        return laboratoris;
-    }
-
     public void setNomCampus(String nomCampus) {
         this.nomCampus = nomCampus;
     }
 
     public void setUbicacio(String ubicacio) {
         this.ubicacio = ubicacio;
-    }
-
-    public void setAulesEstandard(AulaEstandard[] aulesEstandard) {
-        this.aulesEstandard = aulesEstandard;
-    }
-
-    public void setAulesInformatica(AulaInformatica[] aulesInformatica) {
-        this.aulesInformatica = aulesInformatica;
-    }
-
-    public void setLaboratoris(Laboratori[] laboratoris) {
-        this.laboratoris = laboratoris;
     }
 
     /**
@@ -196,8 +172,15 @@ public class Campus {
      */
 
     public void addAulaEstandard() {
-        aulesEstandard[pAulesEstandard] = AulaEstandard.addAulaEstandard();
-        pAulesEstandard++;
+        AulaEstandard novaAula = AulaEstandard.addAulaEstandard();
+        String codiNovaAula = novaAula.getCodi();
+        int comprobacioExisteix = selectAulaEstandard(codiNovaAula);
+        if (comprobacioExisteix == -1) {
+            aulesEstandard[pAulesEstandard] = novaAula;
+            pAulesEstandard++;
+        } else {
+            System.out.println("L'aula estàndard ja existeix");
+        }
     }
 
     /**
