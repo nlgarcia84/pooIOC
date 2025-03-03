@@ -85,22 +85,22 @@ public class Laboratori {
      * Retorn: Objecte Laboratori creat.
      */
     public static Laboratori addLaboratori() {
-        String codi;
-        int numeroLaboratori, capacitat;
-        double costPerDia;
+        String codiNouLaboratori;
+        int numeroNouLaboratori, capacitatNouLaboratori;
+        double costNouLaboratori;
         System.out.println("Introdueixi el codi del laboratori");
-        codi = DADES.next();
+        codiNouLaboratori = DADES.next();
         DADES.nextLine();
         System.out.println("Introdueixi el numero de laboratori");
-        numeroLaboratori = DADES.nextInt();
+        numeroNouLaboratori = DADES.nextInt();
         DADES.nextLine();
         System.out.println("Introdueixi el cost per dia");
-        costPerDia = DADES.nextDouble();
+        costNouLaboratori = DADES.nextDouble();
         DADES.nextLine();
         System.out.println("Introdueixi la capacitat del laboratori");
-        capacitat = DADES.nextInt();
+        capacitatNouLaboratori = DADES.nextInt();
         DADES.nextLine();
-        return new Laboratori(codi, numeroLaboratori, costPerDia, capacitat);
+        return new Laboratori(codiNouLaboratori, numeroNouLaboratori, costNouLaboratori, capacitatNouLaboratori);
     }
 
     /*
@@ -121,24 +121,28 @@ public class Laboratori {
      */
 
     public void updateLaboratori() {
+        String codiLaboratoriCanvi;
+        int numeroLaboratoriCanvi, capacitatLaboratoriCanvi;
+        double costLaboratoriCanvi;
         System.out.println("Codi actual: " + getCodi());
         System.out.println("Introdueixi el nou codi");
-        codi = DADES.next();
+        codiLaboratoriCanvi = DADES.next();
         DADES.nextLine();
-        setCodi(codi);
+        setCodi(codiLaboratoriCanvi);
         System.out.println("Número de laboratori actual: " + getNumeroLaboratori());
         System.out.println("Introdueixi el nou número de laboratori");
-        numeroLaboratori = DADES.nextInt();
-        setNumeroLaboratori(numeroLaboratori);
+        numeroLaboratoriCanvi = DADES.nextInt();
+        setNumeroLaboratori(numeroLaboratoriCanvi);
         System.out.println("Cost per dia actual: " + getCostPerDia());
         System.out.println("Introdueix el nou cost per dia");
-        costPerDia = DADES.nextDouble();
+        costLaboratoriCanvi = DADES.nextDouble();
         DADES.nextLine();
-        setCostPerDia(costPerDia);
+        setCostPerDia(costLaboratoriCanvi);
         System.out.println("Capacitat actual: " + getCapacitat());
         System.out.println("Introdueix nova capacitat");
-        capacitat = DADES.nextInt();
+        capacitatLaboratoriCanvi = DADES.nextInt();
         DADES.nextLine();
+        setCapacitat(capacitatLaboratoriCanvi);
     }
 
     /*

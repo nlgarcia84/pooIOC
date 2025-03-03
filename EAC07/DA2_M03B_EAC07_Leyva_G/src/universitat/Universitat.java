@@ -5,11 +5,14 @@
 
 package universitat;
 
+import java.util.Scanner;
+
 /**
  *
  * @author fgarin
  */
 public class Universitat {
+    private final static Scanner DADES = new Scanner(System.in);
 
     private String nomUniversitat;
     private String ubicacioSeu;
@@ -27,11 +30,10 @@ public class Universitat {
      * - Assignar als atributs corresponents els valors passats com a paràmetres.
      */
 
-    public Universitat(String nomUniversitat, String ubicacioSeu, Campus[] campus, int pCampus) {
+    public Universitat(String nomUniversitat, String ubicacioSeu) {
+
         this.nomUniversitat = nomUniversitat;
         this.ubicacioSeu = ubicacioSeu;
-        this.campus = campus;
-        this.pCampus = pCampus;
     }
 
     /**
@@ -45,12 +47,12 @@ public class Universitat {
         return ubicacioSeu;
     }
 
-    public Campus[] getCampus() {
-        return campus;
+    public void setNomUniversitat(String nomUniversitat) {
+        this.nomUniversitat = nomUniversitat;
     }
 
-    public int getpCampus() {
-        return pCampus;
+    public void setUbicacioSeu(String ubicacioSeu) {
+        this.ubicacioSeu = ubicacioSeu;
     }
 
     /**
@@ -66,6 +68,14 @@ public class Universitat {
      * 
      * Retorn: Objecte Universitat creat.
      */
+    public static Universitat addUniversitat() {
+        String nomNovaUniversitat, ubicacioNovaUniversitat;
+        System.out.println("Introdueixi el nom de la universitat");
+        nomNovaUniversitat = DADES.nextLine();
+        System.out.println("Introdueixi la ubicació de la universitat");
+        ubicacioNovaUniversitat = DADES.nextLine();
+        return new Universitat(nomNovaUniversitat, ubicacioNovaUniversitat);
+    }
 
     /**
      * TODO
@@ -84,6 +94,17 @@ public class Universitat {
      * 
      * Retorn: cap
      */
+
+    public void updateUniversitat() {
+        String nomUniversitatCanvi, ubicacioUniversitatCanvi;
+        System.out.println("Nom de la Universitat actual: " + getNomUniversitat());
+        System.out.println("Introdueixi el nom de la nova Universitat");
+        nomUniversitatCanvi = DADES.nextLine();
+        setNomUniversitat(nomUniversitatCanvi);
+        System.out.println("Introdueixi la seva ubicació");
+        ubicacioUniversitatCanvi = DADES.nextLine();
+        setUbicacioSeu(ubicacioUniversitatCanvi);
+    }
 
     /**
      * TODO

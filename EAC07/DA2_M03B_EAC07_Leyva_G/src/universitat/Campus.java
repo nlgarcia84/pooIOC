@@ -74,12 +74,12 @@ public class Campus {
      * Retorn: Objecte Campus creat.
      */
     public static Campus addCampus() {
-        String nomCampus, ubicacio;
+        String nomCam, ubicacioCam;
         System.out.println("Introdueixi el nom del campus");
-        nomCampus = DADES.nextLine();
+        nomCam = DADES.nextLine();
         System.out.println("Introdueixi la ubicació del campus");
-        ubicacio = DADES.nextLine();
-        return new Campus(nomCampus, ubicacio);
+        ubicacioCam = DADES.nextLine();
+        return new Campus(nomCam, ubicacioCam);
     }
 
     /*
@@ -101,14 +101,15 @@ public class Campus {
      */
 
     public void updateCampus() {
+        String nomCam, ubicacioCam;
         System.out.println("Nom del campus actual: " + getNomCampus());
         System.out.println("Introdueixi el nom del nou campus");
-        nomCampus = DADES.nextLine();
-        setNomCampus(nomCampus);
+        nomCam = DADES.nextLine();
+        setNomCampus(nomCam);
         System.out.println("Ubicació actual del campus: " + getUbicacio());
         System.out.println("Introdueixi la nova ubicació del campus");
-        ubicacio = DADES.nextLine();
-        setUbicacio(ubicacio);
+        ubicacioCam = DADES.nextLine();
+        setUbicacio(ubicacioCam);
     }
     /*
      * TODO
@@ -298,6 +299,18 @@ public class Campus {
      *
      * Retorn: cap
      */
+
+    public void addLaboratori() {
+        Laboratori nouLaboratori = Laboratori.addLaboratori();
+        String codiNouLaboratori = nouLaboratori.getCodi();
+        int comprobacioExisteix = selectLaboratori(codiNouLaboratori);
+        if (comprobacioExisteix == -1) {
+            laboratoris[pLaboratoris] = nouLaboratori;
+            pLaboratoris++;
+        } else {
+            System.out.println("El laboratori ja existeix");
+        }
+    }
 
     /**
      *

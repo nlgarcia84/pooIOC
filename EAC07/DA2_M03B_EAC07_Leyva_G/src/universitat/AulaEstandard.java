@@ -75,19 +75,19 @@ public class AulaEstandard {
      */
 
     public static AulaEstandard addAulaEstandard() {
-        String codi;
-        int numeroAula;
-        double costPerDia;
+        String codiNovaAulaEstandard;
+        int numeroNovaAulaEstandard;
+        double costNovaAulaEstandard;
         System.out.println("Introdueixi el codi de l'aula");
-        codi = DADES.next();
+        codiNovaAulaEstandard = DADES.next();
         DADES.nextLine();
         System.out.println("Introdueixi el número de l'aula");
-        numeroAula = DADES.nextInt();
+        numeroNovaAulaEstandard = DADES.nextInt();
         DADES.nextLine();
         System.out.println("Introdueixi el cost per dia");
-        costPerDia = DADES.nextDouble();
+        costNovaAulaEstandard = DADES.nextDouble();
         DADES.nextLine();
-        return new AulaEstandard(codi, numeroAula, costPerDia);
+        return new AulaEstandard(codiNovaAulaEstandard, numeroNovaAulaEstandard, costNovaAulaEstandard);
     }
 
     /*
@@ -106,21 +106,24 @@ public class AulaEstandard {
      * Retorn: cap
      */
     public void updateAulaEstandard() {
+        String codiAulaEstandardCanvi;
+        int numeroAulaEstandardCanvi;
+        double costAulaEstandardCanvi;
         System.out.println("Codi actual: " + getCodi());
         System.out.println("Introdueixi el nou codi");
-        codi = DADES.next();
+        codiAulaEstandardCanvi = DADES.next();
         DADES.nextLine();
-        setCodi(codi);
+        setCodi(codiAulaEstandardCanvi);
         System.out.println("Número d'aula actual: " + getNumeroAula());
         System.out.println("Introdueixi el nou número d'aula");
-        numeroAula = DADES.nextInt();
+        numeroAulaEstandardCanvi = DADES.nextInt();
         DADES.nextLine();
-        setNumeroAula(numeroAula);
+        setNumeroAula(numeroAulaEstandardCanvi);
         System.out.println("Cost per dia actual: " + getCostPerDia());
         System.out.println("Introdueixi el nou cost per dia");
-        costPerDia = DADES.nextDouble();
+        costAulaEstandardCanvi = DADES.nextDouble();
         DADES.nextLine();
-        setCostPerDia(costPerDia);
+        setCostPerDia(costAulaEstandardCanvi);
     }
 
     /*

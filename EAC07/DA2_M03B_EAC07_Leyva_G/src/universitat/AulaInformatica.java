@@ -87,23 +87,24 @@ public class AulaInformatica {
      */
 
     public static AulaInformatica addAulaInformatica() {
-        String codi;
-        int numeroAula;
-        double cosPerDia;
-        double areaEnMetresQuadrats;
+        String codiAulaInformaticaNova;
+        int numeroAulaInformaticaNova;
+        double costAulaInformaticaNova;
+        double areaAulaInformaticaNova;
         System.out.println("Introdueixi el codi de l'aula");
-        codi = DADES.next();
+        codiAulaInformaticaNova = DADES.next();
         DADES.nextLine();
         System.out.println("Introdueix el número de l'aula");
-        numeroAula = DADES.nextInt();
+        numeroAulaInformaticaNova = DADES.nextInt();
         DADES.nextLine();
         System.out.println("Introdueix el cost per dia");
-        cosPerDia = DADES.nextDouble();
+        costAulaInformaticaNova = DADES.nextDouble();
         DADES.nextLine();
         System.out.println("Introdueix el cost per dia");
-        areaEnMetresQuadrats = DADES.nextDouble();
+        areaAulaInformaticaNova = DADES.nextDouble();
         DADES.nextLine();
-        return new AulaInformatica(codi, numeroAula, cosPerDia, areaEnMetresQuadrats);
+        return new AulaInformatica(codiAulaInformaticaNova, numeroAulaInformaticaNova, costAulaInformaticaNova,
+                areaAulaInformaticaNova);
     }
 
     /*
@@ -124,25 +125,29 @@ public class AulaInformatica {
      */
 
     public void updateAulaInformatica() {
+        String codiAI;
+        int numAI;
+        double costAI;
+        double areaAI;
         System.out.println("Codi actual: " + getCodi());
         System.out.println("Introdueixi el nou codi");
-        codi = DADES.next();
+        codiAI = DADES.next();
         DADES.nextLine();
-        setCodi(codi);
+        setCodi(codiAI);
         System.out.println("Número d'aula actual: " + getNumeroAula());
         System.out.println("Introdueixi el nou número d'aula");
-        numeroAula = DADES.nextInt();
-        setNumeroAula(numeroAula);
+        numAI = DADES.nextInt();
+        setNumeroAula(numAI);
         DADES.nextLine();
         System.out.println("Cost per dia actual: " + getCosPerDia());
         System.out.println("Introdueixi el nou cost per dia");
-        cosPerDia = DADES.nextDouble();
-        setCosPerDia(cosPerDia);
+        costAI = DADES.nextDouble();
+        setCosPerDia(costAI);
         DADES.nextLine();
         System.out.println("Metres quadrats actuals: " + getAreaEnMetresQuadrats());
         System.out.println("Introdueix els nous metres quadrats");
-        areaEnMetresQuadrats = DADES.nextDouble();
-        setAreaEnMetresQuadrats(areaEnMetresQuadrats);
+        areaAI = DADES.nextDouble();
+        setAreaEnMetresQuadrats(areaAI);
     }
 
     /*
