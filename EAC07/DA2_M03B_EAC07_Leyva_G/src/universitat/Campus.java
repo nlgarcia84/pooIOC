@@ -21,7 +21,7 @@ public class Campus {
     private AulaEstandard[] aulesEstandard = new AulaEstandard[100];
     private int pAulesEstandard = 0; // Primera posició buida de l'array d'aules estàndard
     private AulaInformatica[] aulesInformatica = new AulaInformatica[100];
-    private int pAulansInformatica = 0; // Primera posició buida de l'array d'aules d'informàtica
+    private int pAulesInformatica = 0; // Primera posició buida de l'array d'aules d'informàtica
     private Laboratori[] laboratoris = new Laboratori[100];
     private int pLaboratoris = 0; // Primera posició buida de l'array de laboratoris
 
@@ -125,8 +125,8 @@ public class Campus {
      */
 
     public double costManteniment() {
-        AulaEstandard aulaStandard = new AulaEstandard(nomCampus, pAulesEstandard, pAulansInformatica);
-        Laboratori laboratori = new Laboratori(nomCampus, pLaboratoris, pAulesEstandard, pAulansInformatica);
+        AulaEstandard aulaStandard = new AulaEstandard(nomCampus, pAulesEstandard, pAulesInformatica);
+        Laboratori laboratori = new Laboratori(nomCampus, pLaboratoris, pAulesEstandard, pAulesInformatica);
         double costMantenimentTotal = aulaStandard.costManteniment() + laboratori.costManteniment();
         return costMantenimentTotal;
     }
@@ -172,11 +172,11 @@ public class Campus {
      */
 
     public void addAulaEstandard() {
-        AulaEstandard novaAula = AulaEstandard.addAulaEstandard();
-        String codiNovaAula = novaAula.getCodi();
-        int comprobacioExisteix = selectAulaEstandard(codiNovaAula);
+        AulaEstandard novaAulaEstandard = AulaEstandard.addAulaEstandard();
+        String codiNovaAulaEstandard = novaAulaEstandard.getCodi();
+        int comprobacioExisteix = selectAulaEstandard(codiNovaAulaEstandard);
         if (comprobacioExisteix == -1) {
-            aulesEstandard[pAulesEstandard] = novaAula;
+            aulesEstandard[pAulesEstandard] = novaAulaEstandard;
             pAulesEstandard++;
         } else {
             System.out.println("L'aula estàndard ja existeix");
@@ -234,6 +234,18 @@ public class Campus {
      *
      * Retorn: cap
      */
+
+    public void addAulaInformatica() {
+        AulaInformatica novAulaInformatica = AulaInformatica.addAulaInformatica();
+        String codiNovaAulaInformatica = novAulaInformatica.getCodi();
+        int comprobacioExisteix = selectAulaInformatica(codiNovaAulaInformatica);
+        if (comprobacioExisteix == -1) {
+            aulesInformatica[pAulesInformatica] = novAulaInformatica;
+            pAulesInformatica++;
+        } else {
+            System.out.println("L'aula d'informàtica ja existeix");
+        }
+    }
 
     /**
      *
