@@ -127,8 +127,11 @@ public class Campus {
 
     public double costManteniment() {
         AulaEstandard aulaStandard = new AulaEstandard(nomCampus, pAulesEstandard, pAulesInformatica);
+        AulaInformatica aulaInformatica = new AulaInformatica(nomCampus, pLaboratoris, pAulesInformatica,
+                pAulesEstandard);
         Laboratori laboratori = new Laboratori(nomCampus, pLaboratoris, pAulesEstandard, pAulesInformatica);
-        double costMantenimentTotal = aulaStandard.costManteniment() + laboratori.costManteniment();
+        double costMantenimentTotal = aulaStandard.costManteniment() + aulaInformatica.costManteniment()
+                + laboratori.costManteniment();
         return costMantenimentTotal;
     }
 
