@@ -121,6 +121,17 @@ public class Universitat {
      * Retorn: Cost de manteniment total de la universitat (double).
      */
 
+    public double costManteniment() {
+        double costMantenimentUniversitat = 0.0;
+        for (int i = 0; i < pCampus; i++) {
+            Campus campusObjecte = campus[i];
+            if (campusObjecte != null) {
+                costMantenimentUniversitat += campusObjecte.costManteniment();
+            }
+        }
+        return costMantenimentUniversitat;
+    }
+
     /**
      * TODO
      *
