@@ -133,7 +133,7 @@ public class Campus {
         for (int i = 0; i < pAulesEstandard; i++) {
             AulaEstandard aulaEstandardObjecte = aulesEstandard[i];
             if (aulaEstandardObjecte != null) {
-                costMantenimentTotal += aulaEstandardObjecte.getCostPerDia();
+                costMantenimentTotal += aulaEstandardObjecte.costManteniment();
             }
         }
 
@@ -141,7 +141,7 @@ public class Campus {
         for (int i = 0; i < pAulesInformatica; i++) {
             AulaInformatica aulaInformaticaObjecte = aulesInformatica[i];
             if (aulaInformaticaObjecte != null) {
-                costMantenimentTotal += aulaInformaticaObjecte.getCostPerDia();
+                costMantenimentTotal += aulaInformaticaObjecte.costManteniment();
             }
         }
 
@@ -149,7 +149,7 @@ public class Campus {
         for (int i = 0; i < pLaboratoris; i++) {
             Laboratori laboratoriObjecte = laboratoris[i];
             if (laboratoriObjecte != null) {
-                costMantenimentTotal += laboratoriObjecte.getCostPerDia();
+                costMantenimentTotal += laboratoriObjecte.costManteniment();
             }
         }
         return costMantenimentTotal;
