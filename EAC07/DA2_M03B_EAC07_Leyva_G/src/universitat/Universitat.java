@@ -145,6 +145,11 @@ public class Universitat {
      * 
      * Retorn: cap
      */
+    public void showUniversitat() {
+        System.out.println("Nom de la universitat: " + getNomUniversitat());
+        System.out.println("Ubicació: " + getUbicacioSeu());
+        System.out.println("Cost del seu manteniment: " + costManteniment());
+    }
 
     /**
      * Campus
