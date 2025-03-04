@@ -52,6 +52,18 @@ public class Campus {
         return ubicacio;
     }
 
+    public AulaEstandard[] getAulesEstandard() {
+        return aulesEstandard;
+    }
+
+    public AulaInformatica[] getAulesInformatica() {
+        return aulesInformatica;
+    }
+
+    public Laboratori[] getLaboratoris() {
+        return laboratoris;
+    }
+
     public void setNomCampus(String nomCampus) {
         this.nomCampus = nomCampus;
     }

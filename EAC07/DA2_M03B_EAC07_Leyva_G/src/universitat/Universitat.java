@@ -68,7 +68,7 @@ public class Universitat {
      * 
      * Retorn: Objecte Universitat creat.
      */
-    public static Universitat addUniversitat() {
+    public Universitat addUniversitat() {
         String nomNovaUniversitat, ubicacioNovaUniversitat;
         System.out.println("Introdueixi el nom de la universitat");
         nomNovaUniversitat = DADES.nextLine();
