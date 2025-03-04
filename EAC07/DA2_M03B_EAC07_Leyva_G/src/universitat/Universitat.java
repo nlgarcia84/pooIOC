@@ -171,6 +171,17 @@ public class Universitat {
      * 
      * Retorn: cap
      */
+    public void addCampus() {
+        Campus nouCampus = Campus.addCampus();
+        String nomNouCampus = nouCampus.getNomCampus();
+        int comprobacioExisteix = selectCampus(nomNouCampus);
+        if (comprobacioExisteix == -1) {
+            campus[pCampus] = nouCampus;
+            pCampus++;
+        } else {
+            System.out.println("El campus ja existeix");
+        }
+    }
 
     /**
      *
