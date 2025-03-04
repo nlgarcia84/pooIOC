@@ -126,12 +126,32 @@ public class Campus {
      */
 
     public double costManteniment() {
-        AulaEstandard aulaStandard = new AulaEstandard(nomCampus, pAulesEstandard, pAulesInformatica);
-        AulaInformatica aulaInformatica = new AulaInformatica(nomCampus, pLaboratoris, pAulesInformatica,
-                pAulesEstandard);
-        Laboratori laboratori = new Laboratori(nomCampus, pLaboratoris, pAulesEstandard, pAulesInformatica);
-        double costMantenimentTotal = aulaStandard.costManteniment() + aulaInformatica.costManteniment()
-                + laboratori.costManteniment();
+
+        double costMantenimentTotal = 0.0;
+
+        // calcula cost total de aules estandards
+        for (int i = 0; i < pAulesEstandard; i++) {
+            AulaEstandard aulaEstandardObjecte = aulesEstandard[i];
+            if (aulaEstandardObjecte != null) {
+                costMantenimentTotal += aulaEstandardObjecte.getCostPerDia();
+            }
+        }
+
+        // calcula cost total de aules informatica
+        for (int i = 0; i < pAulesEstandard; i++) {
+            AulaInformatica aulaInformaticaObjecte = aulesInformatica[i];
+            if (aulaInformaticaObjecte != null) {
+                costMantenimentTotal += aulaInformaticaObjecte.getCostPerDia();
+            }
+        }
+
+        // calcula cost total de laboratoris
+        for (int i = 0; i < pAulesEstandard; i++) {
+            Laboratori laboratoriObjecte = laboratoris[i];
+            if (laboratoriObjecte != null) {
+                costMantenimentTotal += laboratoriObjecte.getCostPerDia();
+            }
+        }
         return costMantenimentTotal;
     }
 

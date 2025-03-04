@@ -15,7 +15,7 @@ public class AulaInformatica {
 
     private String codi;
     private int numeroAula;
-    private double cosPerDia;
+    private double costPerDia;
     private double areaEnMetresQuadrats;
 
     /*
@@ -28,10 +28,10 @@ public class AulaInformatica {
      * Accions:
      * - Assignar als atributs corresponents els valors passats com a paràmetres.
      */
-    public AulaInformatica(String codi, int numeroAula, double cosPerDia, double areaEnMetresQuadrats) {
+    public AulaInformatica(String codi, int numeroAula, double costPerDia, double areaEnMetresQuadrats) {
         this.codi = codi;
         this.numeroAula = numeroAula;
-        this.cosPerDia = cosPerDia;
+        this.costPerDia = costPerDia;
         this.areaEnMetresQuadrats = areaEnMetresQuadrats;
     }
 
@@ -47,8 +47,8 @@ public class AulaInformatica {
         return numeroAula;
     }
 
-    public double getCosPerDia() {
-        return cosPerDia;
+    public double getCostPerDia() {
+        return costPerDia;
     }
 
     public double getAreaEnMetresQuadrats() {
@@ -63,8 +63,8 @@ public class AulaInformatica {
         this.numeroAula = numeroAula;
     }
 
-    public void setCosPerDia(double cosPerDia) {
-        this.cosPerDia = cosPerDia;
+    public void setCostPerDia(double cosPerDia) {
+        this.costPerDia = cosPerDia;
     }
 
     public void setAreaEnMetresQuadrats(double areaEnMetresQuadrats) {
@@ -139,10 +139,10 @@ public class AulaInformatica {
         numAI = DADES.nextInt();
         setNumeroAula(numAI);
         DADES.nextLine();
-        System.out.println("Cost per dia actual: " + getCosPerDia());
+        System.out.println("Cost per dia actual: " + getCostPerDia());
         System.out.println("Introdueixi el nou cost per dia");
         costAI = DADES.nextDouble();
-        setCosPerDia(costAI);
+        setCostPerDia(costAI);
         DADES.nextLine();
         System.out.println("Metres quadrats actuals: " + getAreaEnMetresQuadrats());
         System.out.println("Introdueix els nous metres quadrats");
@@ -183,7 +183,7 @@ public class AulaInformatica {
      * Retorn: cost de manteniment de l'aula (double).
      */
     public double costManteniment() {
-        double costManteniment = getCosPerDia() * 0.05;
+        double costManteniment = getCostPerDia() * 0.05;
         ;
         return costManteniment;
     }
