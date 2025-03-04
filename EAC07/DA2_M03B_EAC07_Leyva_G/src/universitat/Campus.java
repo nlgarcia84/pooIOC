@@ -138,7 +138,7 @@ public class Campus {
         }
 
         // calcula cost total de aules informatica
-        for (int i = 0; i < pAulesEstandard; i++) {
+        for (int i = 0; i < pAulesInformatica; i++) {
             AulaInformatica aulaInformaticaObjecte = aulesInformatica[i];
             if (aulaInformaticaObjecte != null) {
                 costMantenimentTotal += aulaInformaticaObjecte.getCostPerDia();
@@ -146,7 +146,7 @@ public class Campus {
         }
 
         // calcula cost total de laboratoris
-        for (int i = 0; i < pAulesEstandard; i++) {
+        for (int i = 0; i < pLaboratoris; i++) {
             Laboratori laboratoriObjecte = laboratoris[i];
             if (laboratoriObjecte != null) {
                 costMantenimentTotal += laboratoriObjecte.getCostPerDia();
