@@ -2,6 +2,7 @@ package principal;
 
 import java.util.Scanner;
 
+import universitat.Campus;
 import universitat.Universitat;
 
 /**
@@ -163,7 +164,38 @@ public class Application {
      * "S'ha de seleccionar una opció correcta del menú."
      * - definiu una variable opcio de tipus enter.
      */
+    public static void menuCampus() {
+        int opcio;
 
+        do {
+            int indexSel;
+            System.out.println("\nMenú de campus. Selecciona una opció:");
+            System.out.println("\n0. Sortir");
+            System.out.println("\n1. Alta");
+            System.out.println("\n2. Modificar");
+            System.out.println("\n3. Llistar");
+
+            opcio = Integer.parseInt(DADES.nextLine());
+
+            switch (opcio) {
+                case 0:
+                    menuPrincipal();
+                    break;
+                case 1:
+                    Universitat nouCampus = new Universitat(null, null);
+                    nouCampus.addCampus();
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+                    break;
+                default:
+                    System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
+                    break;
+            }
+        } while (opcio != 0);
+    }
     /*
      * TODO
      * 
