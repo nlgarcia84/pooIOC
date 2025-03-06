@@ -249,6 +249,12 @@ public class Campus {
         return -1;
     }
 
+    public void showAulesEstandards() {
+        for (int i = 0; i < pAulesEstandard; i++) {
+            aulesEstandard[i].showAulaEstandard();
+        }
+    }
+
     /**
      * AulaInformatica
      *

@@ -47,6 +47,14 @@ public class Universitat {
         return ubicacioSeu;
     }
 
+    /**
+     * @param
+     * @return Campus
+     */
+    public Campus getCampus(int index) {
+        return this.campus[index];
+    }
+
     public void setNomUniversitat(String nomUniversitat) {
         this.nomUniversitat = nomUniversitat;
     }
@@ -218,6 +226,13 @@ public class Universitat {
             campus[index].addAulaEstandard();
         } else {
             System.out.println("\nEl campus no existeix");
+        }
+    }
+
+    // Métode per llistar l'array campus
+    public void showCampus() {
+        for (int i = 0; i < pCampus; i++) {
+            campus[i].showCampus();
         }
     }
 

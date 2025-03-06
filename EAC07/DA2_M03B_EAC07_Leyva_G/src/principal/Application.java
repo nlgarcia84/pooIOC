@@ -1,5 +1,6 @@
 package principal;
 
+import java.lang.annotation.AnnotationTypeMismatchException;
 import java.util.Scanner;
 
 import universitat.Campus;
@@ -53,21 +54,21 @@ public class Application {
                     if (universitatActual != null) {
                         menuAulesEstandard();
                     } else {
-                        System.out.println("\nPrimer s'ha de seleccionar el campus al menú 1. Gestió de campus.");
+                        System.out.println("\nPrimer s'ha de seleccionar el campus al menú 2. Gestió de campus.");
                     }
                     break;
                 case 4:
                     if (universitatActual != null) {
-                        menuAulesInformatica();
+                        // menuAulesInformatica();
                     } else {
-                        System.out.println("\nPrimer s'ha de seleccionar el campus al menú 1. Gestió de campus.");
+                        System.out.println("\nPrimer s'ha de seleccionar el campus al menú 2. Gestió de campus.");
                     }
                     break;
                 case 5:
                     if (universitatActual != null) {
-                        menuLaboratoris();
+                        // menuLaboratoris();
                     } else {
-                        System.out.println("\nPrimer s'ha de seleccionar el campus al menú 1. Gestió de campus.");
+                        System.out.println("\nPrimer s'ha de seleccionar el campus al menú 2. Gestió de campus.");
                     }
                     break;
                 default:
@@ -95,7 +96,7 @@ public class Application {
             switch (opcio) {
                 case 0:
                     break;
-                case 1:
+                case 1: // Afegir universitat
                     Universitat novaUniversitat = Universitat.addUniversitat();
 
                     indexSel = selectUniversitat(novaUniversitat);
@@ -106,9 +107,8 @@ public class Application {
                     } else {
                         System.out.println("\nLa universitat ja existeix");
                     }
-
                     break;
-                case 2:
+                case 2: // Seleccionar universitat
                     indexSel = selectUniversitat(null);
 
                     if (indexSel >= 0) {
@@ -117,7 +117,7 @@ public class Application {
                         System.out.println("\nNo existeix aquesta universitat");
                     }
                     break;
-                case 3:
+                case 3: // Modifica universitat
                     indexSel = selectUniversitat(null);
 
                     if (indexSel >= 0) {
@@ -126,7 +126,7 @@ public class Application {
                         System.out.println("\nNo existeix aquesta universitat");
                     }
                     break;
-                case 4:
+                case 4: // Llista universitats
                     for (int i = 0; i < pUniversitat; i++) {
                         universitats[i].showUniversitat();
                     }
@@ -179,16 +179,21 @@ public class Application {
 
             switch (opcio) {
                 case 0:
-                    menuPrincipal();
                     break;
                 case 1:
-                    Universitat nouCampus = new Universitat(null, null);
-                    nouCampus.addCampus();
+                    Application.universitatActual.addCampus();
                     break;
                 case 2:
-
+                    indexSel = Application.universitatActual.selectCampus(null);
+                    if (indexSel >= 0) {
+                        Campus campusActual = Application.universitatActual.getCampus(indexSel);
+                        campusActual.updateCampus();
+                    } else {
+                        System.out.println("\nNo existeix aquest campus");
+                    }
                     break;
                 case 3:
+                    Application.universitatActual.showCampus();
                     break;
                 default:
                     System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
@@ -196,6 +201,7 @@ public class Application {
             }
         } while (opcio != 0);
     }
+
     /*
      * TODO
      * 
@@ -224,7 +230,41 @@ public class Application {
      * missatge "S'ha de seleccionar una opció correcta del menú."
      * - definiu una variable opcio de tipus enter
      */
+    public static void menuAulesEstandard() {
+        int opcio;
 
+        do {
+            int indexSel;
+            System.out.println("\nMenú Aules Estàndard. Selecciona una opció:");
+            System.out.println("\n0. Sortir");
+            System.out.println("\n1. Alta");
+            System.out.println("\n2. Modificar");
+            System.out.println("\n3. Llista AulesEstandard");
+
+            opcio = Integer.parseInt(DADES.nextLine());
+
+            switch (opcio) {
+                case 0:
+                    break;
+                case 1:
+                    Application.universitatActual.addAulaEstandardCampus();
+                    break;
+                case 2:
+                    Application.universitatActual.updateAulaEstandardCampus();
+                    break;
+                case 3:
+                    indexSel = Application.universitatActual.selectCampus(null);
+                    if (indexSel >= 0) {
+                        Campus campusActual = Application.universitatActual.getCampus(indexSel);
+                        campusActual.showAulesEstandards();
+                    }
+                default:
+                    System.out.println("S'ha de seleccionar una opció correcta del menú.");
+                    break;
+            }
+
+        } while (opcio != 0);
+    }
     /*
      * TODO
      * 
