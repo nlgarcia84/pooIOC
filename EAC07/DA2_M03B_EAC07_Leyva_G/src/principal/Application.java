@@ -59,14 +59,14 @@ public class Application {
                     break;
                 case 4:
                     if (universitatActual != null) {
-                        // menuAulesInformatica();
+                        menuAulesInformatica();
                     } else {
                         System.out.println("\nPrimer s'ha de seleccionar el campus al menú 2. Gestió de campus.");
                     }
                     break;
                 case 5:
                     if (universitatActual != null) {
-                        // menuLaboratoris();
+                        menuLaboratoris();
                     } else {
                         System.out.println("\nPrimer s'ha de seleccionar el campus al menú 2. Gestió de campus.");
                     }
