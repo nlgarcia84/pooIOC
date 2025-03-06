@@ -258,6 +258,7 @@ public class Application {
                         Campus campusActual = Application.universitatActual.getCampus(indexSel);
                         campusActual.showAulesEstandards();
                     }
+                    break;
                 default:
                     System.out.println("S'ha de seleccionar una opció correcta del menú.");
                     break;
@@ -265,6 +266,7 @@ public class Application {
 
         } while (opcio != 0);
     }
+
     /*
      * TODO
      * 
@@ -294,7 +296,42 @@ public class Application {
      * missatge "S'ha de seleccionar una opció correcta del menú."
      * - definiu una variable opcio de tipus enter
      */
+    public static void menuAulesInformatica() {
+        int opcio;
 
+        do {
+            int indexSel;
+            System.out.println("\nMenú Aules Informàtica. Selecciona una opció:");
+            System.out.println("\n0. Sortir");
+            System.out.println("\n1. Alta");
+            System.out.println("\n2. Modificar");
+            System.out.println("\n3. Llista AulesEstandard");
+
+            opcio = Integer.parseInt(DADES.nextLine());
+
+            switch (opcio) {
+                case 0:
+                    break;
+                case 1:
+                    Application.universitatActual.addAulaInformaticaCampus();
+                    break;
+                case 2:
+                    Application.universitatActual.updateAulaInformaticaCampus();
+                    break;
+                case 3:
+                    indexSel = Application.universitatActual.selectCampus(null);
+                    if (indexSel >= 0) {
+                        Campus campusActual = Application.universitatActual.getCampus(indexSel);
+                        campusActual.showAulesInformatica();
+                    }
+                    break;
+                default:
+                    System.out.println("S'ha de seleccionar una opció correcta del menú.");
+                    break;
+            }
+
+        } while (opcio != 0);
+    }
     /*
      * TODO
      * 
@@ -323,6 +360,43 @@ public class Application {
      * missatge "S'ha de seleccionar una opció correcta del menú."
      * - definiu una variable opcio de tipus enter
      */
+
+    public static void menuLaboratoris() {
+        int opcio;
+
+        do {
+            int indexSel;
+            System.out.println("\nMenú Laboratoris. Selecciona una opció:");
+            System.out.println("\n0. Sortir");
+            System.out.println("\n1. Alta");
+            System.out.println("\n2. Modificar");
+            System.out.println("\n3. Llista AulesEstandard");
+
+            opcio = Integer.parseInt(DADES.nextLine());
+
+            switch (opcio) {
+                case 0:
+                    break;
+                case 1:
+                    Application.universitatActual.addLaboratoriCampus();
+                    break;
+                case 2:
+                    Application.universitatActual.updateLaboratoriCampus();
+                    break;
+                case 3:
+                    indexSel = Application.universitatActual.selectCampus(null);
+                    if (indexSel >= 0) {
+                        Campus campusActual = Application.universitatActual.getCampus(indexSel);
+                        campusActual.showLaboratoris();
+                    }
+                    break;
+                default:
+                    System.out.println("S'ha de seleccionar una opció correcta del menú.");
+                    break;
+            }
+
+        } while (opcio != 0);
+    }
 
     public static Integer selectUniversitat(Universitat Universitat) {
         String nom;

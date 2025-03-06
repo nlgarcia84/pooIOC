@@ -255,6 +255,18 @@ public class Campus {
         }
     }
 
+    public void showAulesInformatica() {
+        for (int i = 0; i < pAulesInformatica; i++) {
+            aulesInformatica[i].showAulaInformatica();
+        }
+    }
+
+    public void showLaboratoris() {
+        for (int i = 0; i < pLaboratoris; i++) {
+            laboratoris[i].showLaboratori();
+        }
+    }
+
     /**
      * AulaInformatica
      *
