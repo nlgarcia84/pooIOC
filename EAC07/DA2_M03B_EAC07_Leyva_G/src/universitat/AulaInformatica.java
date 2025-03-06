@@ -100,7 +100,7 @@ public class AulaInformatica {
         System.out.println("Introdueix el cost per dia");
         costAulaInformaticaNova = DADES.nextDouble();
         DADES.nextLine();
-        System.out.println("Introdueix el cost per dia");
+        System.out.println("Introdueix el tamany en metres quadrats");
         areaAulaInformaticaNova = DADES.nextDouble();
         DADES.nextLine();
         return new AulaInformatica(codiAulaInformaticaNova, numeroAulaInformaticaNova, costAulaInformaticaNova,
@@ -184,7 +184,6 @@ public class AulaInformatica {
      */
     public double costManteniment() {
         double costManteniment = getCostPerDia() * 0.05;
-        ;
         return costManteniment;
     }
 
