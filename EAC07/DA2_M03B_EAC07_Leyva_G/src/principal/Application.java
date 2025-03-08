@@ -72,7 +72,8 @@ public class Application {
                     }
                     break;
                 default:
-                    System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
+                    System.out
+                            .println("\nS'ha de seleccionar una opció correcta del menú.");
                     break;
             }
         } while (opcio != 0);
@@ -96,28 +97,30 @@ public class Application {
             switch (opcio) {
                 case 0:
                     break;
-                case 1: // Afegir universitat
+                case 1: // Afegir nova universitat
                     Universitat novaUniversitat = Universitat.addUniversitat();
 
                     indexSel = selectUniversitat(novaUniversitat);
 
-                    if (indexSel == -1) {
+                    if (indexSel == -1) { // verifiquem si existeix, en cas contrari l'afegim a l'array universitats i
+                                          // incrementem +1 el comptdor pUniversitat
                         universitats[pUniversitat] = novaUniversitat;
                         pUniversitat++;
                     } else {
                         System.out.println("\nLa universitat ja existeix");
                     }
                     break;
-                case 2: // Seleccionar universitat
+                case 2: // Seleccionar universitat existent
                     indexSel = selectUniversitat(null);
 
-                    if (indexSel >= 0) {
+                    if (indexSel >= 0) { // verifiquem si existeix, si existeix accedim sino li diem que no hi és
                         universitatActual = universitats[indexSel];
                     } else {
                         System.out.println("\nNo existeix aquesta universitat");
                     }
                     break;
-                case 3: // Modifica universitat
+                case 3: // Modifica universitat. Primer verifiquem si existeix, si existeix procedim
+                        // sino li diem que no hi és
                     indexSel = selectUniversitat(null);
 
                     if (indexSel >= 0) {
@@ -126,12 +129,12 @@ public class Application {
                         System.out.println("\nNo existeix aquesta universitat");
                     }
                     break;
-                case 4: // Llista universitats
+                case 4: // Llistem l'array d'universitats
                     for (int i = 0; i < pUniversitat; i++) {
                         universitats[i].showUniversitat();
                     }
                     break;
-                default:
+                default: // La opció escollida es incorrecte
                     System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
                     break;
             }
@@ -180,10 +183,11 @@ public class Application {
             switch (opcio) {
                 case 0:
                     break;
-                case 1:
+                case 1: // Afegir nou campus
                     Application.universitatActual.addCampus();
                     break;
-                case 2:
+                case 2: // Verifiquem si existeix el campus que es vol modificar, si no existeix li
+                        // avisem a l'usuari
                     indexSel = Application.universitatActual.selectCampus(null);
                     if (indexSel >= 0) {
                         Campus campusActual = Application.universitatActual.getCampus(indexSel);
@@ -192,10 +196,10 @@ public class Application {
                         System.out.println("\nNo existeix aquest campus");
                     }
                     break;
-                case 3:
+                case 3: // llistem l'array de campus
                     Application.universitatActual.showCampus();
                     break;
-                default:
+                default: // La opció escollida es incorrecte
                     System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
                     break;
             }
@@ -246,20 +250,21 @@ public class Application {
             switch (opcio) {
                 case 0:
                     break;
-                case 1:
+                case 1: // Afegim nova aula estandard, el mètode ja fa les comprobacions pertinents
                     Application.universitatActual.addAulaEstandardCampus();
                     break;
-                case 2:
+                case 2: // Actualitzem aula estandard existent, el mètode ja fa les comprobacions
+                        // pertinents
                     Application.universitatActual.updateAulaEstandardCampus();
                     break;
-                case 3:
+                case 3: // Llistem les aules estandards de l'array
                     indexSel = Application.universitatActual.selectCampus(null);
                     if (indexSel >= 0) {
                         Campus campusActual = Application.universitatActual.getCampus(indexSel);
                         campusActual.showAulesEstandards();
                     }
                     break;
-                default:
+                default: // La opció escollida es incorrecte
                     System.out.println("S'ha de seleccionar una opció correcta del menú.");
                     break;
             }
@@ -312,20 +317,21 @@ public class Application {
             switch (opcio) {
                 case 0:
                     break;
-                case 1:
+                case 1: // Afegim nova aula d'informàtica, el mètode ja fa les comprobacions pertinents
                     Application.universitatActual.addAulaInformaticaCampus();
                     break;
-                case 2:
+                case 2: // Actualitzem l'aula d'informàtica existent, el mètode ja fa les comprobacions
+                        // pertinents
                     Application.universitatActual.updateAulaInformaticaCampus();
                     break;
-                case 3:
+                case 3: // Llistem les aules d'informàtica de l'array
                     indexSel = Application.universitatActual.selectCampus(null);
                     if (indexSel >= 0) {
                         Campus campusActual = Application.universitatActual.getCampus(indexSel);
                         campusActual.showAulesInformatica();
                     }
                     break;
-                default:
+                default: // La opció escollida es incorrecte
                     System.out.println("S'ha de seleccionar una opció correcta del menú.");
                     break;
             }
@@ -377,20 +383,21 @@ public class Application {
             switch (opcio) {
                 case 0:
                     break;
-                case 1:
+                case 1: // Afegim nou laboratori, el mètode ja fa les comprobacions pertinents
                     Application.universitatActual.addLaboratoriCampus();
                     break;
-                case 2:
+                case 2: // Actualitzem el laboratori existent, el mètode ja fa les comprobacions
+                        // pertinents
                     Application.universitatActual.updateLaboratoriCampus();
                     break;
-                case 3:
+                case 3: // Llistem els laboratoris de l'array
                     indexSel = Application.universitatActual.selectCampus(null);
                     if (indexSel >= 0) {
                         Campus campusActual = Application.universitatActual.getCampus(indexSel);
                         campusActual.showLaboratoris();
                     }
                     break;
-                default:
+                default: // La opció escollida es incorrecte
                     System.out.println("S'ha de seleccionar una opció correcta del menú.");
                     break;
             }
