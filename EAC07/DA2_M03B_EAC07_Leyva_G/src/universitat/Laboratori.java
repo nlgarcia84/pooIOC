@@ -183,6 +183,7 @@ public class Laboratori {
 
     public double costManteniment() {
         double costManteniment = getCostPerDia() * 0.35;
-        return costManteniment;
+        double costMantenimentRounded = Math.round(costManteniment * 100.0) / 100.0;
+        return costMantenimentRounded;
     }
 }

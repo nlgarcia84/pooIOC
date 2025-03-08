@@ -305,7 +305,7 @@ public class Application {
             System.out.println("\n0. Sortir");
             System.out.println("\n1. Alta");
             System.out.println("\n2. Modificar");
-            System.out.println("\n3. Llista AulesEstandard");
+            System.out.println("\n3. Llista Aules Informàtica");
 
             opcio = Integer.parseInt(DADES.nextLine());
 
@@ -370,7 +370,7 @@ public class Application {
             System.out.println("\n0. Sortir");
             System.out.println("\n1. Alta");
             System.out.println("\n2. Modificar");
-            System.out.println("\n3. Llista AulesEstandard");
+            System.out.println("\n3. Llista Laboratoris");
 
             opcio = Integer.parseInt(DADES.nextLine());
 
