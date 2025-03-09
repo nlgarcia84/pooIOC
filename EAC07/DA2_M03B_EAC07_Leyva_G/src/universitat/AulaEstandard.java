@@ -142,7 +142,7 @@ public class AulaEstandard {
         System.out.println("Les dades actuals de l'aula son les següents:");
         System.out.println("Codi de l'aula: " + getCodi());
         System.out.println("Número de l'aula: " + getNumeroAula());
-        System.out.println("Cost de manteniment: " + costManteniment());
+        System.out.printf("%nEl cost de manteniment: %.2f", costManteniment());
     }
 
     /*
@@ -161,7 +161,6 @@ public class AulaEstandard {
      */
     public double costManteniment() {
         double costManteniment = getCostPerDia() * 0.20;
-        double costMantenimentRounded = Math.round(costManteniment * 100.0) / 100.0;
-        return costMantenimentRounded;
+        return costManteniment;
     }
 }

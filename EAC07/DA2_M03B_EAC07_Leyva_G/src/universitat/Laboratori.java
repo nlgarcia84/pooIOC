@@ -162,7 +162,7 @@ public class Laboratori {
         System.out.println("Les dades actuals del laboratori son les segënts:");
         System.out.println("Codi del laboratori: " + getCodi());
         System.out.println("Número del laboratori: " + getNumeroLaboratori());
-        System.out.println("Cost de manteniment: " + costManteniment());
+        System.out.printf("%nEl cost de manteniment: %.2f", costManteniment());
         System.out.println("Capacitat del laboratori: " + getCapacitat());
         ;
     }
